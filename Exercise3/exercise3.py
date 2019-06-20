@@ -308,9 +308,8 @@ def lrCostFunction(theta, X, y, lambda_):
     
     # ====================== YOUR CODE HERE ======================
 
-    hypo = utils.sigmoid(theta * X).T
+    hypo = utils.sigmoid(X @ theta)
     J = (1/m) * np.sum((-y*np.log(hypo) - (1-y)*np.log(1-hypo)))
-    breakpoint()
 
     # =============================================================
     return J, grad
